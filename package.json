@@ -1,0 +1,16 @@
+{
+  "name": "2short",
+  "version": "1.0.0",
+  "description": "A URL shortening service.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Rob j Loranger",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "~4.0.0",
+    "mongodb": "~2.1.0"
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>Rob's Super URL Shortener Service</title>
+<style>
+  body{
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  h1,h2,h3 {
+    text-align: center;
+  }
+</style>
+  </head>
+  <body>
+    <h1>Shorter!</h1>
+    <p>Enter a valid URL to get back a new, shorter URL.</p>
+    <form>
+      <input name="origin" placeholder="http://www.example.com"><br/>
+      <input type='submit'>
+    </form>
+    <div class='shortUrlResults'></div>
+    <p>Valid URL's are as follows:<br/>
+    <code>Always either http or https</code><br/>
+    <code>With or without www or other subdomain</code><br/>
+    <code>And optionaly any number of subdirectories followed by a file</code><br/>
+    Examples inlcude:<br/><code>http://www.google.com</code><br/>or <code>https://mail.google.com</code><br/>or <code>https://www.google.com/doodles</code></p>
+    <h3>Use this service as an API</h3>
+    <p>To use this URL shortening service in your app simply <code>POST</code> to this domain/new with a query parameter for <code>origin</code> with your <em>url-encoded</em> domain to shorten.</p>
+    <p>Example: <code>http://domain/new?origin=http%3A%2F%2Fwww.google.com</code></p>
+    <p>The sever will respond back with json in the following format:<br/>
+    <code>
+      {
+        "shortcode": "E4mrt5",
+        "origin": "http://www.google.com",
+        "shorturl": "http://domain/E4mrt5"
+      }
+    </code>
+    <p>All requests to valid url shortcodes will redirect to the original url submitted.</p>
+  </body>
+  <script src='client.js'></script>
+</html>
+
