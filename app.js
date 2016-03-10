@@ -9,7 +9,7 @@
 
 'use strict';
 var express = require('express'), app = express(), db = require('./db');
-const PORT = process.env.PORT || 8080
+const PORT = (process.env.PORT || 8080)
 , URL = 'mongodb://localhost:27017/shorter';
 
 
