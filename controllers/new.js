@@ -35,7 +35,7 @@ router.post('/', function routeNewGetHandler(req, res){
         // insert the document into the DB
         console.log("Origin does not exist");
         let newShort = generateNewCode();
-        let newShortUrl = 'http://'+req.get('host') +'/'+ newShort;
+        let newShortUrl = req.get('host') +'/'+ newShort;
         insert(origin,newShort,newShortUrl, function routeNewInsertNewEntry(err,docs){
           console.log("Successfuly inserted %s", origin);
           // after insertion we return the newly
