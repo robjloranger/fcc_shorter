@@ -26,14 +26,14 @@
     <code>And optionaly any number of subdirectories followed by a file</code><br/>
     Examples inlcude:<br/><code>http://www.google.com</code><br/>or <code>https://mail.google.com</code><br/>or <code>https://www.google.com/doodles</code></p>
     <h3>Use this service as an API</h3>
-    <p>To use this URL shortening service in your app simply <code>POST</code> to this domain/new with a query parameter for <code>origin</code> with your <em>url-encoded</em> domain to shorten.</p>
-    <p>Example: <code>http://domain/new?origin=http%3A%2F%2Fwww.google.com</code></p>
+    <p>To use this URL shortening service in your app simply <code>POST</code> to this rjl.li/new with a query parameter for <code>origin</code> with your <em>url-encoded</em> domain to shorten.</p>
+    <p>Example: <code>http://rjl.li/new/?origin=http%3A%2F%2Fwww.google.com</code></p>
     <p>The sever will respond back with json in the following format:<br/>
     <code>
       {
         "shortcode": "E4mrt5",
         "origin": "http://www.google.com",
-        "shorturl": "http://domain/E4mrt5"
+        "shorturl": "http://rjl.li/E4mrt5"
       }
     </code>
     <p>All requests to valid url shortcodes will redirect to the original url submitted.</p>
