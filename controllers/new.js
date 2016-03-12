@@ -21,7 +21,7 @@ function generateNewCode(){
 
 // POST routing on /new
 router.post('/', function routeNewGetHandler(req, res){
-  let origin = req.query.origin;
+  let origin = decodeURIComponent(req.query.origin);
   if(urlIsValid(origin)){
     read.origin(origin, function routeNewReadOrigin(err,docs){
       // if the origin url already exists
