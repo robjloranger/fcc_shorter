@@ -12,7 +12,7 @@ function clientDrawResults(request){
   // then set value to url
   // and attach to anchor element
   let resultAnchorUrl = document.createAttribute('href');
-  resultAnchorUrl.value = resultUrl;
+  resultAnchorUrl.value = 'http://' + resultUrl;
   resultAnchor.setAttributeNode(resultAnchorUrl);
   // set link text to url
   // and append to the anchor
