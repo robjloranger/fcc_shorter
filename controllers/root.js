@@ -1,6 +1,7 @@
 var express = require('express')
 , router = express.Router()
-, read = require('../models/read');
+, read = require('../models/read')
+, increase = require('../models/clicked.js');
 
 
 // router for root url path, a shortcode is passed
@@ -14,6 +15,9 @@ router.get('/:code', function routeRootGetHandler(req,res){
       if(docs.length){
         // if so we redirect the client
         console.log('Short code match, redirecting..');
+        increase(thisCode,function routeRootUpdateClicks(err,docs){
+          return;
+        });
         res.redirect(docs[0].origin);
       }else{
         // otherwise return 404 with error msg
