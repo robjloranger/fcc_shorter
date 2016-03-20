@@ -32,8 +32,8 @@ function clientDrawResults(request){
 }
 
 // function to alert user to invalid url submission
-function clientDrawInvalidUrl(origin){
-  // TODO all this here :)
+function clientOriginHighlight(state){
+  document.getElementsByName('origin')[0].style.boxShadow = "0 0 14px " + state;
 }
 
 // function to validate url before submission
@@ -64,12 +64,20 @@ function clientSubmitForm(origin){
 
 // event listener for form submission
 document.getElementsByTagName('form')[0]
-.addEventListener('submit', function clientJSEventListener(event){
+.addEventListener('submit', function clientJSEventListenerSubmit(event){
   event.preventDefault();
   let origin = document.getElementsByName('origin')[0].value;
   if(urlIsValid(origin)){
     clientSubmitForm(origin);
+  }
+});
+// event listener for keyup to check url in real time
+document.getElementsByName('origin')[0]
+.addEventListener('keyup', function clientJSEventListenerKeyUp(event){
+  let origin = document.getElementsByName('origin')[0].value;
+  if(urlIsValid(origin)){
+    clientOriginHighlight('green');
   }else{
-    clientDrawInvalidUrl(origin);
+    clientOriginHighlight('red');
   }
 });
