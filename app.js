@@ -10,7 +10,7 @@
 'use strict';
 var express = require('express'), app = express(), db = require('./db');
 const PORT = process.env.PORT || 3000
-, URL = 'mongodb://localhost:27017/shorter';
+, URL = 'mongodb://2short:twoshort@ds011943.mlab.com:11943/robs-freecodecamp';
 
 
 // serve up public as landing page
